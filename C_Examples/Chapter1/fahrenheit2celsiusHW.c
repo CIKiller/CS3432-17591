@@ -12,7 +12,7 @@ void main() {
 	  float fahr, celsius;
 
 	  for (fahr = 0; fahr <= 300.00; fahr = fahr + 20.00) {
-          print("fahr:", fahr);
+          printf("fahr:", fahr);
 		    celsius = convert(fahr);
 	  }
 }

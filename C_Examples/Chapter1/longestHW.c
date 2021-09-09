@@ -34,11 +34,14 @@ int getaline(char s[], int lim)
 	if (i < lim - 1)
 		s[i] = c;
 	
-    if (c == '\n') {
-	s[lim - 1] = c;
-	++i;
-    }
-    s[lim - 1] = '\0';
+    if (i < lim - 1)
+	if (c == '\n') {
+		s[i] = c;
+		++i;
+	}
+	
+	s[i] = '\0';
+	
     return i;
 }
 

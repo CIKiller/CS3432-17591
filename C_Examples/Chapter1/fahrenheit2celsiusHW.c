@@ -3,7 +3,7 @@
 float convert(float fahr) {
   float celsius = ((fahr - 32.0) * 0.55);
   
-  print("Celsius:", celsius);
+  printf("Celsius:", celsius);
 
   return celsius;
 }

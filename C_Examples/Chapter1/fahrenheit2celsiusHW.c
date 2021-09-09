@@ -5,7 +5,7 @@ float convert(float fahr) {
   //This is the most simple way to convert fahrenheit in a function.
 }
 
-void main(){
+main(){
 	float fahr, celsius;
 	
 	for (fahr = 0; fahr <= 300.0; fahr = fahr + 20.0) {

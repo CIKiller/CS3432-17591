@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main() {
+void main() {
 	  float fahr, celsius;
 
 	  for (fahr = 0; fahr <= 300.00; fahr = fahr + 20.00) {
@@ -13,7 +13,5 @@ main() {
 float convert(float fahr) {
   fahr = ((fahr - 32) * 0.55);
   
-  if (fahr > 0) {
-    return fahr
-  }
+  return fahr;
 }

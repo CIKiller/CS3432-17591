@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+float convert(float fahr) {
+  return (5.0 / 9.0) * (fahr - 32.0);
+  //This is the most simple way to convert fahrenheit in a function.
+}
+
 main()
 {
 	  int fahr;

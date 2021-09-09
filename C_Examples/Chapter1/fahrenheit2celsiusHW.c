@@ -1,17 +1,17 @@
 #include <stdio.h>
 
 float convert(float fahr) {
-  fahr = ((fahr - 32) * 0.55);
+  float celsius = ((fahr - 32.0) * 0.55);
   
-  return fahr;
+  return celsius;
 }
 
 void main() {
-	float fahr, celsius;
+	  float fahr, celsius;
 
-	for (fahr = 0; fahr <= 300.00; fahr = fahr + 20.00) {
-		celsius = convert(fahr);
-		
-		printf("%d\t%d\n", fahr, celsius);
-	}
+	  for (fahr = 0; fahr <= 300.00; fahr = fahr + 20.00) {
+		    celsius = convert(fahr);
+		  
+		    printf("%d\t%d\n", fahr, celsius);
+	  }
 }

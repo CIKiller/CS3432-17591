@@ -81,7 +81,7 @@ main() {
   
   char input;
   
-  printf("Please input a sentence.", "/n");
+  printf("Please input a sentence.", "\n");
   
   scanf("%c", &input);
 	

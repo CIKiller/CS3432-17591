@@ -28,7 +28,7 @@ bool non_delim_character(char c){
 char *word_start(char* str){
 	
 	for (int i = 1; i < sizeof(*str); i++) {
-		if (delim_character(*str[i - 1])) {
+		if (delim_character(str[i - 1])) {
 			char* first = &str[i];
 			
 			return first;

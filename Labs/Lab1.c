@@ -81,11 +81,13 @@ main() {
   
   char input;
   
-  printf("Please input a sentence.", \n);
+  printf("Please input a sentence.");
   
   scanf("%c", &input);
 	
   char* pointer = &input;
+	
+  printf("Pointer created.");
 	
   printf("There are ", count_tokens(pointer), "Tokens.");
 	

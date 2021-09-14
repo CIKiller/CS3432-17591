@@ -45,8 +45,15 @@ char *end_word(char* str){
 
 // counts the number of words or tokens
 int count_tokens(char* str){
-
-
+	
+	tokens = 0;
+	
+	for (int i = 0; i < sizeof(*str); i++) {
+		if (delim_character(str[i])) {
+			tokens++;
+		}
+	}
+	return tokens;
 }
 
 /* Returns a freshly allocated zero-terminated vector of freshly allocated
@@ -74,8 +81,12 @@ main() {
   
   char input;
   
-  printf("Please input a sentence.");
+  printf("Please input a sentence.", /n);
   
   scanf("%c", &input);
+	
+  char* pointer = &input;
+	
+  printf("There are ", count_tokens(pointer), "Tokens.";
 	
 }

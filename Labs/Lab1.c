@@ -27,14 +27,21 @@ bool non_delim_character(char c){
    space-separated word*/
 char *word_start(char* str){
 	
-	
-	
+	for (int i = 1; i < sizeof(*str); i++) {
+		if (delim_character(*str[i - 1])) {
+			char* first = &str[i];
+			
+			return first;
+		}
+	}
+	return;
 }
 
 /* Returns a pointer to the first space character of the zero
 terminated string*/
 char *end_word(char* str){
 
+	space
 }
 
 // counts the number of words or tokens

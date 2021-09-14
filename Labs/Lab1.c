@@ -77,13 +77,7 @@ void print_all_tokens(char** tokens){
 
 }
 
-main() {
-  
-  char input;
-  
-  printf("Please input a sentence.");
-  
-  scanf("%c", &input);
+main() }
 	
   char* pointer = &input;
 	

@@ -34,14 +34,13 @@ char *word_start(char* str){
 			return first;
 		}
 	}
-	return;
+	return ' ';
 }
 
 /* Returns a pointer to the first space character of the zero
 terminated string*/
 char *end_word(char* str){
-
-	space
+	
 }
 
 // counts the number of words or tokens
@@ -73,16 +72,10 @@ void print_all_tokens(char** tokens){
 
 main() {
   
-  string input;
+  char input;
   
   printf("Please input a sentence.");
   
-  scanf("%S", &input);
-	
-	int c = 4;
-  
-  int *y = &c;
-  
-  printf(*y);
+  scanf("%c", &input);
 	
 }

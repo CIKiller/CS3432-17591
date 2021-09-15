@@ -84,6 +84,6 @@ main() {
 	
   scanf("%[^\n]%*c", input);
 	
-  printf("You input: %s.", input);
+  printf("You input: %s. \n", input);
 	
 }

@@ -83,8 +83,8 @@ main() {
 	
   char input[100];
 	
-  scanf("%s", input);
+  scanf("%s", &input);
 	
-  printf("%.100s\n", input);
+  printf("%s", input);
 	
 }

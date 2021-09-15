@@ -85,6 +85,10 @@ main() {
 	
   printf("Pointer created.");
 	
-  printf("There are ", count_tokens(pointer), "Tokens.");
+  printf("There are ");
+	
+  printf(count_tokens(pointer));
+	
+  printf("Tokens");
 	
 }

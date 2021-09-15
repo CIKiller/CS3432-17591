@@ -81,8 +81,8 @@ main() {
 	
   printf("Please input a sentence.\n");
 	
-  char input[] = scanf("%s", input);
+  char input[100];
 	
-  printf(input);
+  scanf("%s", input);
 	
 }

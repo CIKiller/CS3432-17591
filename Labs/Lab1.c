@@ -85,6 +85,6 @@ main() {
 	
   scanf("%s", input);
 	
-  printf("%s", input[100]);
+  printf("%.100s\n", input);
 	
 }

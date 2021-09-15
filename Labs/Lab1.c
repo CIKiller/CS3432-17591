@@ -79,12 +79,10 @@ void print_all_tokens(char** tokens){
 
 main() {
 	
+  char input[100];
+	
   printf("Please input a sentence.");
 
-  scanf("%c", &input);
-	
-  char[sizeof(input)] str = input;
-	
-  printf(str);
+  scanf("%s", input);
 	
 }

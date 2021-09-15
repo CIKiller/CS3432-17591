@@ -79,16 +79,12 @@ void print_all_tokens(char** tokens){
 
 main() {
 	
-  char[] input = 'Say hello to the stars.';
+  printf("Please input a sentence.");
+
+  scanf("%c", &input);
 	
-  char* pointer = &input;
+  char[sizeof(input)] str = input;
 	
-  printf("Pointer created.");
-	
-  printf("There are ");
-	
-  printf(count_tokens(pointer));
-	
-  printf("Tokens");
+  printf(str);
 	
 }

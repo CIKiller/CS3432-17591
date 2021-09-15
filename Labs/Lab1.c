@@ -85,6 +85,10 @@ main() {
 	
   scanf("%s", &input);
 	
-  printf("%s", input);
+  for (int i = 0; i < sizeof(input); i++) {
+	  
+  	printf("%c, ", input[i]);
+	  
+  }
 	
 }

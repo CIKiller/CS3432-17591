@@ -46,7 +46,7 @@ char *end_word(char* str){
 // counts the number of words or tokens
 int count_tokens(char* str){
 	
-	tokens = 0;
+	int tokens = 0;
 	
 	for (int i = 0; i < sizeof(*str); i++) {
 		if (delim_character(str[i])) {
@@ -78,6 +78,8 @@ void print_all_tokens(char** tokens){
 }
 
 main() {
+	
+  char input = 'Say hello to the stars.'
 	
   char* pointer = &input;
 	

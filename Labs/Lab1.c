@@ -82,7 +82,7 @@ main() {
   char input[100];
   printf("Enter a string: \n");
 	
-  scanf("%s", input);
+  scanf("%[^\n]%*s", input);
 	
   printf("You input: %s.", input);
 	

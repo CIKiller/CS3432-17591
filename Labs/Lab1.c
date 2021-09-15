@@ -77,7 +77,7 @@ void print_all_tokens(char** tokens){
 
 }
 
-main() }
+main() {
 	
   char* pointer = &input;
 	

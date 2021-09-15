@@ -79,7 +79,7 @@ void print_all_tokens(char** tokens){
 
 main() {
 	
-  char input = 'Say hello to the stars.';
+  char[] input = 'Say hello to the stars.';
 	
   char* pointer = &input;
 	

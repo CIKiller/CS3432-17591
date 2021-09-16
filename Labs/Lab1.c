@@ -44,8 +44,6 @@ int count_tokens(char* str){
 	
 	int tokens = 0;
 	
-	printf("The string is this long: %d", sizeof(str));
-	
 	for (int i = 0; i < sizeof(str); i++) {
 		if (str[i] == (' ' || '\t')) {
 			tokens++;
@@ -93,6 +91,6 @@ main() {
 	
   int tokens = count_tokens(str);
 	
-  printf("%d",tokens);
+  printf("Tokens: %d",tokens);
 	
 }

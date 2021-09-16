@@ -84,7 +84,7 @@ main() {
 	
   char* str[100];
 	
-  str = &input;
+  str[100] = &input;
 	
   printf("%s",*str);
 	

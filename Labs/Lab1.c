@@ -49,7 +49,7 @@ char *end_word(char* str){
 	
 	end = &str[i];
 	
-	return end
+	return end;
 }
 
 // counts the number of words or tokens

@@ -82,7 +82,7 @@ main() {
 	
   printf("You input: %s. \n", input);
 	
-  char* str;
+  char* str[100];
 	
   str = &input;
 	

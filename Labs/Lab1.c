@@ -100,7 +100,7 @@ main() {
 	
   printf("%c", *let);*/
 	
-  char wor[] = ("Hello world");
+  char wor[] = ("Hello beautiful world");
 	
   char* word = wor;
 	

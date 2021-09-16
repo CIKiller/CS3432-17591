@@ -6,7 +6,7 @@
    Zero terminators are not printable (therefore false) */
 bool delim_character(char c){
 	
-	return (c == ' ' || c== '\t'); 
+	return (c == ' ' || c== '\0'); 
 	
 }
 
@@ -55,7 +55,7 @@ int count_tokens(char* str){
 	
 	int tokens = 0;
 	
-	for (int i = 0; i < sizeof(*str); i++) {
+	for (int i = 0; i < sizeof(str); i++) {
 		if (delim_character(str[i])) {
 			tokens++;
 		}

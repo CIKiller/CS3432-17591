@@ -58,6 +58,8 @@ int count_tokens(char* str){
 	for (int i = 0; i < sizeof(str); i++) {
 		if (delim_character(str[i])) {
 			tokens++;
+			
+			printf("%c", str[i - 1]);
 		}
 	}
 	return tokens;

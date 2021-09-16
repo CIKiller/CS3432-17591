@@ -100,10 +100,14 @@ main() {
 	
   printf("%c", *let);*/
 	
-  /*int tokens = count_tokens(str);
+  char wor[] = ("Hello world");
 	
-  printf("Tokens: %d",tokens);*/
+  char* word = wor;
 	
-  char* end = end_word(str);
+  int tokens = count_tokens(word);
+	
+  printf("Tokens: %d",tokens);
+	
+  //char* end = end_word(str);
 	
 }

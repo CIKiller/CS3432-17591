@@ -59,6 +59,8 @@ int count_tokens(char* str){
 	while (str[i] != '\0') {
 		if (str[i] == ' ') {
 			tokens++;
+			
+			i++;
 		}
 	}
 	

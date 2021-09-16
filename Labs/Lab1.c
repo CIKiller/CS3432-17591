@@ -91,6 +91,6 @@ main() {
 	
   int tokens = count_tokens(str);
 	
-  printf(tokens);
+  printf("%d",tokens);
 	
 }

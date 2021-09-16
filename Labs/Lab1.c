@@ -16,7 +16,7 @@ bool delim_character(char c){
    character (not tab or space).
    Zero terminators are not printable (therefore false) */
 bool non_delim_character(char c){
-	if (delim_character(c) == false) {
+	if (!delim_character(c)) {
 		return true;
 	}
 	
@@ -80,10 +80,13 @@ void print_all_tokens(char** tokens){
 main() {
 	
   char input[100];
+	
   printf("Enter a string: \n");
 	
   scanf("%[^\n]%*c", input);
 	
   printf("You input: %s. \n", input);
+	
+  char* str = input;
 	
 }

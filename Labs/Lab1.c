@@ -55,14 +55,14 @@ int count_tokens(char* str){
 	
 	int tokens = 0;
 	
-	for (int i = 0; i != 100 ; i++) {
-		printf("%c", str[i]);
-		if (delim_character(str[i])) {
-			tokens++;
-			
-			printf("%c", str[i - 1]);
-		}
+	int i = 0;
+	
+	while (str[i] != ('\0' || '\t') {
+		printf("%d", str[i]);
+		
+		i++;
 	}
+	
 	return tokens;
 }
 

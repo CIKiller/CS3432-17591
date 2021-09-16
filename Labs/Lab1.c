@@ -46,6 +46,7 @@ int count_tokens(char* str){
 	
 	for (int i = 0; i < sizeof(str); i++) {
 		if (delim_character(str[i])) {
+			printf("Token found between %c", str[i - 1], " and %c", str[i + 1]);
 			tokens++;
 		}
 	}

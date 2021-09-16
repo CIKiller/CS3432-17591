@@ -36,6 +36,17 @@ char *word_start(char* str){
 terminated string*/
 char *end_word(char* str){
 	
+	int i = 0;
+	
+	while (str[i] != '\t') {
+		i++;
+		
+		if (str[i] == '\t') {
+			printf("Found the end of the string at i = %d", i);
+		}
+	}
+	
+	
 		
 }
 
@@ -89,8 +100,10 @@ main() {
 	
   printf("%c", *let);*/
 	
-  int tokens = count_tokens(str);
+  /*int tokens = count_tokens(str);
 	
-  printf("Tokens: %d",tokens);
+  printf("Tokens: %d",tokens);*/
+	
+  char* end = end_word(str);
 	
 }

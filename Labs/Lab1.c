@@ -84,6 +84,6 @@ main() {
 	
   char* str = input;
 	
-  printf("%d", str);
+  printf("%s", *str);
 	
 }

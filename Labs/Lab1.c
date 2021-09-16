@@ -86,6 +86,6 @@ main() {
 	
   char* let = word_start(str);
 	
-  printf("%c", let);
+  printf("%c", *let);
 	
 }

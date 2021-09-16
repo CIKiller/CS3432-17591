@@ -36,6 +36,7 @@ char *word_start(char* str){
 terminated string*/
 char *end_word(char* str){
 	
+		
 }
 
 // counts the number of words or tokens
@@ -43,7 +44,7 @@ int count_tokens(char* str){
 	
 	int tokens = 0;
 	
-	for (int i = 0; i < sizeof(*str); i++) {
+	for (int i = 0; i < sizeof(str); i++) {
 		if (delim_character(str[i])) {
 			tokens++;
 		}
@@ -87,5 +88,9 @@ main() {
   char* let = word_start(str);
 	
   printf("%c", *let);
+	
+  int tokens = count_tokens(str);
+	
+  printf(tokens);
 	
 }

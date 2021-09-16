@@ -29,7 +29,6 @@ char *word_start(char* str){
 			return first;
 		}
 	}
-	return ' ';
 }
 
 /* Returns a pointer to the first space character of the zero

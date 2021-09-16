@@ -22,7 +22,7 @@ bool non_delim_character(char c){
    space-separated word*/
 char *word_start(char* str){
 	
-	for (int i = 1; i < sizeof(*str); i++) {
+	for (int i = 1; i < sizeof(str); i++) {
 		if (delim_character(str[i - 1])) {
 			char* first = &str[i];
 			
@@ -82,10 +82,10 @@ main() {
 	
   printf("You input: %s. \n", input);
 	
-  char* str;
+  char* str = input;
 	
-  str = input;
+  char* let = word_start(str);
 	
-  printf("%s", str);
+  printf("%c", let);
 	
 }

@@ -37,16 +37,19 @@ char *end_word(char* str){
 	
 	int i = 0;
 	
-	while (str[i] != '\t') {
+	char* end;
+	
+	while (str[i] != '\0') {
 		i++;
-		
-		if (str[i] == '\t') {
-			printf("Found the end of the string at i = %d", i);
-		}
 	}
 	
+	while (str[i - 1] != ' ') {
+		i--;
+	}
 	
-		
+	end = &str[i];
+	
+	return end
 }
 
 // counts the number of words or tokens
@@ -97,7 +100,7 @@ main() {
 	
   scanf("%[^\n]%*c", input);
 	
-  printf("You input: %s. \n", input);
+  printf("Your input: %s. \n", input);
 	
   char* str = input;
 	
@@ -105,6 +108,8 @@ main() {
 	
   printf("Tokens: %d \n",tokens);
 	
-  //char* end = end_word(str);
+  char* end = end_word(str);
+	
+  printf("First letter of the final word: %c \n", end);
 	
 }

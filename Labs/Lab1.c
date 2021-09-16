@@ -52,7 +52,7 @@ char *end_word(char* str){
 // counts the number of words or tokens
 int count_tokens(char* str){
 	
-	int tokens = 0;
+	int tokens = 1;
 	
 	int i = 0;
 	
@@ -101,17 +101,9 @@ main() {
 	
   char* str = input;
 	
-  /*char* let = word_start(str);
+  int tokens = count_tokens(str);
 	
-  printf("%c", *let);*/
-	
-  char wor[] = ("Hello beautiful world");
-	
-  char* word = wor;
-	
-  int tokens = count_tokens(word);
-	
-  printf("Tokens: %d",tokens);
+  printf("Tokens: %d \n",tokens);
 	
   //char* end = end_word(str);
 	

@@ -56,6 +56,7 @@ int count_tokens(char* str){
 	int tokens = 0;
 	
 	for (int i = 0; i < sizeof(str); i++) {
+		printf("%c", str[i]);
 		if (delim_character(str[i])) {
 			tokens++;
 			

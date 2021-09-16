@@ -82,6 +82,8 @@ main() {
 	
   printf("You input: %s. \n", input);
 	
-  char* str = input;
+  char* str = &input;
+	
+  printf("%d", *str);
 	
 }

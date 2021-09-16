@@ -82,10 +82,10 @@ main() {
 	
   printf("You input: %s. \n", input);
 	
-  char* str[100];
+  char* str;
 	
-  str[100] = &input;
+  str = input;
 	
-  printf("%s",*str);
+  printf("%s", *str);
 	
 }

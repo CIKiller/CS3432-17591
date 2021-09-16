@@ -85,9 +85,9 @@ main() {
 	
   char* str = input;
 	
-  char* let = word_start(str);
+  /*char* let = word_start(str);
 	
-  printf("%c", *let);
+  printf("%c", *let);*/
 	
   int tokens = count_tokens(str);
 	

@@ -5,22 +5,17 @@
    ('\t' or ' ').
    Zero terminators are not printable (therefore false) */
 bool delim_character(char c){
-	if (c == ' ' || c== '\t') {
-		return true;
-	}
 	
-	return false;
+	return (c == ' ' || c== '\t'); 
+	
 }
 
 /* Return true (non-zero) if c is a non-whitespace
    character (not tab or space).
    Zero terminators are not printable (therefore false) */
 bool non_delim_character(char c){
-	if (!delim_character(c)) {
-		return true;
-	}
 	
-	return false;
+	return (!delim_character(c));
 }
 
 /* Returns a pointer to the first character of the next

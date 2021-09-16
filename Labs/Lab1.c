@@ -110,6 +110,6 @@ main() {
 	
   char* end = end_word(str);
 	
-  printf("First letter of the final word: %c \n", end);
+  printf("First letter of the final word: %c \n", *end);
 	
 }

@@ -45,7 +45,7 @@ int count_tokens(char* str){
 	int tokens = 0;
 	
 	for (int i = 0; i < sizeof(str); i++) {
-		if (str[i] == (' ' || '\t')) {
+		if (delim_character(str[i])) {
 			tokens++;
 		}
 	}

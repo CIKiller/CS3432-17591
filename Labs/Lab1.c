@@ -58,7 +58,7 @@ int count_tokens(char* str){
 	int i = 0;
 	
 	while (str[i] != '\0') {
-		printf("%d", str[i]);
+		printf("%s", str[i]);
 		
 		i++;
 	}

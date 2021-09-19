@@ -114,17 +114,11 @@ char** tokenize(char* str){
 				c++;
 			}
 			
+			printf("c: \n", c);
+			
 			char word[c];
 			
-			printf("The size of word is %d at i == %d \n", sizeof(word), i);
 			
-			c = 0;
-			
-			for (int k = j; k < sizeof(word); k++) {
-				word[c] = str[k];
-			}
-			
-			sent[i] = &word;
 			
 			i++;
 		}

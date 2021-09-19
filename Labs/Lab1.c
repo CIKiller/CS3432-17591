@@ -100,7 +100,7 @@ char** tokenize(char* str){
 
 void print_all_tokens(char** tokens){
 	
-	int tok = count_tokens(&tokens);
+	int tok = count_tokens(**tokens);
 	
 	int i = 0;
 	
@@ -128,5 +128,9 @@ main() {
   char* end = end_word(str);
 	
   printf("First letter of the final word: %c \n", *end);
+	
+  char* copy = copy_str(str,' ');
+	
+  printf("Copy of String: %s \n");
 	
 }

@@ -120,6 +120,8 @@ char** tokenize(char* str){
 				k++;
 			}
 			
+			printf("\n");
+			
 			sent[i] = word;
 			
 			i++;

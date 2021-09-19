@@ -89,7 +89,7 @@ char *copy_str(char *inStr, short len){
 		i++;
 	}
 	
-	return &inStr[0];
+	return &inStr;
 }
 
 char** tokenize(char* str){

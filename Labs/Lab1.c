@@ -131,7 +131,7 @@ main() {
 	
   printf("First letter of the final word: %c \n", *end);
 	
-  char* copy = copy_str(str, sizeof(str));
+  char* copy = copy_str(str, ' ');
 	
   printf("Copy of String: %s \n", copy);
 	

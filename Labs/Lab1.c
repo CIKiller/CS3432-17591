@@ -103,7 +103,7 @@ char** tokenize(char* str){
 	int j = 0;
 	
 	for (int i = 0; i < tok;) {
-		if (str[j - 1] == ' ' || j == 0) {
+		if (str[j - 1] == ' ') {
 			int c = 0;
 			
 			int k = j;

@@ -112,6 +112,8 @@ char** tokenize(char* str){
 			
 			printf("j: , k: , c: \n", j, k, c);
 			
+			printf("str[j]: , str[k]: , str[c]: \n", str[j]: , str[k]: , str[c]);
+			
 			i++;
 		}
 		

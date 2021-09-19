@@ -100,13 +100,27 @@ char** tokenize(char* str){
 	
 	char* sent = (char*) malloc(tok * sizeof(char));
 	
+	int i = 0;
+	
 	int j = 0;
 	
 	int k = 0;
 	
 	while (str[j] != '\0') {
 		if (str[j] == ' ' || str[j] == '\t') {
-			printf("There's a SPACE!!! \n");
+			int c = 0;
+			
+			char word[(j - k)];
+			
+			for (int c = 0; c < (j - (k + 1)); c++) {
+				word[c] = str[k];
+				
+				k++;
+			}
+			
+			sent[i] = word;
+			
+			i++;
 		}
 		
 		else {

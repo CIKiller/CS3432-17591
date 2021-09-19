@@ -114,7 +114,7 @@ char** tokenize(char* str){
 			
 			for (int c = 0; c < (j - (k + 1)); c++) {
 				word[c] = str[k];
-				printf("%c ", str[k])
+				printf("%c ", str[k]);
 				k++;
 			}
 			printf("\n");

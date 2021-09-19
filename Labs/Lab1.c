@@ -103,13 +103,12 @@ char** tokenize(char* str){
 	int j = 0;
 	
 	for (int i = 0; i < tok;) {
-		if (str[j - 1] == ' ') {
+		if (str[j - 1] == ' ' || j == 0) {
 			int c = 0;
 			
 			int k = j;
 			
 			while (str[k] != ' ' || str[k] != '\0') {
-				printf("str[k]: \n", str[k]);
 				k++;
 				
 				c++;
@@ -117,7 +116,7 @@ char** tokenize(char* str){
 			
 			char word[c];
 			
-			printf("The size of word is %d \n", sizeof(word));
+			printf("The size of word is %d at i == %d \n", sizeof(word), i);
 			
 			c = 0;
 			

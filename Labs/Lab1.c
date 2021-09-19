@@ -106,7 +106,7 @@ char** tokenize(char* str){
 	for (int i = 0; i < tok;) {
 		if (j == 0){
 			word[i] = str[0];
-			printf("Word[%d] = %c \n", i, str[j]);
+			printf("Word[%d] = %s \n", i, str[j]);
 			
 			i++;
 			
@@ -115,7 +115,7 @@ char** tokenize(char* str){
 		
 		if (str[j - 1] == ' ') {
 			word[i] = str[j];
-			printf("Word[%d] = %c \n", i, str[j]);
+			printf("Word[%d] = %s \n", i, str[j]);
 			
 			i++;
 		}
@@ -131,7 +131,7 @@ char** tokenize(char* str){
 
 void print_all_tokens(char** tokens){
 	
-	printf("Size: %d", sizeof(tokens));
+	printf("Size: %d \n", sizeof(tokens));
 	
 }
 

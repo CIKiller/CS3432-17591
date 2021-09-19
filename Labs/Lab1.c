@@ -7,7 +7,6 @@
 bool delim_character(char c){
 	
 	return (c == ' ' || c== '\0'); 
-	
 }
 
 /* Return true (non-zero) if c is a non-whitespace
@@ -80,16 +79,34 @@ int count_tokens(char* str){
      tokens[3] = 0
 */
 char *copy_str(char *inStr, short len){
-
+	
+	int i = 0;
+	
+	while (inStr[i] != '\0') {
+		if (inStr[i] == len) {
+			inStr[i] = '\0';
+		}
+		i++;
+	}
+	
+	return &inStr[0];
 }
 
 char** tokenize(char* str){
-
+	
+	
 }
 
 
 void print_all_tokens(char** tokens){
-
+	
+	int tok = count_tokens(&tokens);
+	
+	int i = 0;
+	
+	while (i < tok) {
+		i++;
+	}
 }
 
 main() {

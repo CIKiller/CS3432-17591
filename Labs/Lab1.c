@@ -110,7 +110,7 @@ char** tokenize(char* str){
 			
 			int k = j; 
 			
-			printf("k: , c: \n", k, c);
+			printf("j: , k: , c: \n", j, k, c);
 			
 			i++;
 		}
@@ -125,8 +125,6 @@ char** tokenize(char* str){
 
 
 void print_all_tokens(char** tokens){
-	
-	printf("Size: %d \n", sizeof(tokens));
 	
 }
 

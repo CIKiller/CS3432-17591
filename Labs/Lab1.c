@@ -102,6 +102,10 @@ char** tokenize(char* str){
 	
 	int j = 0;
 	
+	while (str[k] != '\0') {
+		printf("%c", str[k]);
+	}
+	/*
 	for (int i = 0; i < tok;) {
 		if (str[j - 1] == ' ' || j == 0) {
 			printf("Empty Space before %c \n", str[j]);
@@ -110,16 +114,12 @@ char** tokenize(char* str){
 			
 			int k = j;
 			
-			for (k; str[k] != ' '; k++) {
-				printf("str[k]: %c \n", str[k]);
-			}
-			
 			printf("str[k]: %c \n", str[k]);
 			
 			i++;
 		}
 		
-		j++;
+		j++; */
 	}
 	
 	char** tokenized = &sent;

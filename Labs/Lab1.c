@@ -110,7 +110,7 @@ char** tokenize(char* str){
 			
 			int k = j;
 			
-			printf("str[k]: \n", str[k]);
+			printf("str[k]: %c \n", str[k]);
 			
 			i++;
 		}

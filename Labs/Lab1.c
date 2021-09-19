@@ -106,15 +106,7 @@ char** tokenize(char* str){
 		if (str[j - 1] == ' ' || j == 0) {
 			printf("Empty Space before %c \n", str[j]);
 			
-			int c = 0; 
-			
-			int k = j; 
-			
-			printf("str[j]: %c, str[k]: %c, str[c]: %c \n", str[j]: , str[k]: , str[c]);
-			
-			printf("j: %d, k: %d, c: %d \n", j, k, c);
-			
-			i++;
+			printf("j: %d \n", j);
 		}
 		
 		j++;

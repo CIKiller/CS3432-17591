@@ -104,23 +104,7 @@ char** tokenize(char* str){
 	
 	for (int i = 0; i < tok;) {
 		if (str[j - 1] == ' ' || j == 0) {
-			int c = 0;
-			
-			int k = j;
-			
-			while (str[k] != ' ' || str[k] != '\0') {
-				k++;
-				
-				c++;
-			}
-			
-			printf("c: \n", c);
-			
-			char word[c];
-			
-			
-			
-			i++;
+			printf("Empty Space before %c", str[j]);
 		}
 		
 		j++;

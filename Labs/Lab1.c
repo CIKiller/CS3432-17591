@@ -108,6 +108,7 @@ char** tokenize(char* str){
 			
 			for (int k = j; str[k] == (' ' || '\0'); k++) {
 				c++;
+				printf("c: \n", c);
 			}
 			
 			char word[c];

@@ -107,6 +107,8 @@ char** tokenize(char* str){
 			printf("Empty Space before %c \n", str[j]);
 			
 			printf("j: %d \n", j);
+			
+			i++;
 		}
 		
 		j++;

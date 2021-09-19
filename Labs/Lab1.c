@@ -114,6 +114,8 @@ char** tokenize(char* str){
 			char* word[(j - k)];
 			
 			for (int c = 0; c < (j - (k + 1)); c++) {
+				printf("c: %d, k: %d \n");
+				
 				word[c] = str[k];
 				
 				printf("word[%d]: %c, str[%d]: %c\n", c, word[c], k, str[k]);
@@ -121,7 +123,7 @@ char** tokenize(char* str){
 				k++;
 			}
 			
-			printf("\n");
+			printf("c: %d, k: %d \n");
 			
 			sent[i] = word;
 			

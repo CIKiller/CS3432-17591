@@ -110,7 +110,7 @@ char** tokenize(char* str){
 		if (str[j] == ' ' || str[j] == '\t') {
 			int c = 0;
 			
-			char word[(j - k)];
+			char* word[(j - k)];
 			
 			for (int c = 0; c < (j - (k + 1)); c++) {
 				word[c] = str[k];
@@ -126,8 +126,8 @@ char** tokenize(char* str){
         	j++;
 	}
 	
-	for (int t = 0; t < 10; t++) {
-		printf("%c", sent[t]);
+	for (int t = 0; t < tok; t++) {
+		printf("%s \n", sent[t]);
 	}
 	
 	char** tokenized = &sent;

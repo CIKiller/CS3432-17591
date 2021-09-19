@@ -131,6 +131,6 @@ main() {
 	
   char* copy = copy_str(str,' ');
 	
-  printf("Copy of String: %s \n");
+  printf("Copy of String: %s \n", copy);
 	
 }

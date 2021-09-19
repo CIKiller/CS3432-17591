@@ -114,9 +114,9 @@ char** tokenize(char* str){
 				k++; 
 				printf("j: %d, k: %d \n", j, k);
 				
-				printf("str[j]: , str[k]: \n", str[j], str[k]);
+				printf("str[j]: %c, str[k]: %c \n", str[j], str[k]);
 				
-				delay(5);
+				delay(5000);
 			}
 			
 			i++;

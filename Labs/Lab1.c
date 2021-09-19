@@ -108,6 +108,7 @@ char** tokenize(char* str){
 	
 	while (str[j] != '\0') {
 		if (str[j] == ' ' || str[j] == '\t') {
+			printf("%d \n", j);
 			int c = 0;
 			
 			char* word[(j - k)];

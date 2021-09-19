@@ -109,7 +109,9 @@ char** tokenize(char* str){
 			printf("There's a SPACE!!! \n");
 		}
 		
-		printf("%c \n ", str[j]);
+		else {
+			printf("%c \n ", str[j]);
+		}
 		
         	j++;
 	}

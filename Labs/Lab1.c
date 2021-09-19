@@ -106,9 +106,14 @@ char** tokenize(char* str){
 		if (str[j - 1] == ' ' || j == 0) {
 			int c = 0;
 			
-			for (int k = j; str[k] == (' ' || '\0'); k++) {
-				c++;
+			int k = j;
+			
+			while (str[k] != (' ' || '\0')) {
 				printf("k: , c: \n", k, c);
+				
+				k++;
+				
+				c++;
 			}
 			
 			char word[c];

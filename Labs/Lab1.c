@@ -97,25 +97,30 @@ char *copy_str(char *inStr, short len){
 char** tokenize(char* str){
 	
 	int tok = count_tokens(str);
-	printf("Tokens: %d \n", tok);
 	
-	char* word = (char*) malloc(tok * sizeof(char));
+	char* sent = (char*) malloc(tok * sizeof(char));
 	
 	int j = 0;
 	
 	for (int i = 0; i < tok;) {
-		if (j == 0){
-			word[i] = str[0];
-			printf("Word[%d] = %s \n", i, str[j]);
+		if (str[j - 1] == ' ' || j == 0) {
+			int c = 0;
 			
-			i++;
+			for (int k = j; str[k] == (' ' || '\0'); k++) {
+				c++;
+			}
 			
-			j++;
-		}
-		
-		if (str[j - 1] == ' ') {
-			word[i] = str[j];
-			printf("Word[%d] = %s \n", i, str[j]);
+			char word[c];
+			
+			printf("The size of word is %d \n", sizeof(word));
+			
+			c = 0;
+			
+			for (int k = j; k < sizeof(word); k++) {
+				word[c] = str[k];
+			}
+			
+			sent[i] = word;
 			
 			i++;
 		}
@@ -123,7 +128,7 @@ char** tokenize(char* str){
 		j++;
 	}
 	
-	char** tokenized = &word;
+	char** tokenized = &sent;
 	
 	return tokenized;
 }

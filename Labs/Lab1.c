@@ -80,16 +80,18 @@ int count_tokens(char* str){
 */
 char *copy_str(char *inStr, short len){
 	
+	char cop[len];
+	
 	int i = 0;
 	
-	while (inStr[i] != '\0') {
-		if (inStr[i] == len) {
-			inStr[i] = '\0';
-		}
+	while (i < len) {
+		cop[i] = inStr[i];
 		i++;
 	}
 	
-	return &inStr;
+	char* copy = cop;
+	
+	return copy;
 }
 
 char** tokenize(char* str){

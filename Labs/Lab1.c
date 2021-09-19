@@ -108,14 +108,15 @@ char** tokenize(char* str){
 			
 			printf("j: %d \n", j);
 			
-			int c = 0;
-			
 			int k = j;
 			
 			while ((str[k] != ' ') || (str[k] != '\0')) { 
 				k++; 
-				c++; 
-				printf("j: %d, k: %d, c: %d \n", j, k, c);
+				printf("j: %d, k: %d \n", j, k);
+				
+				printf("str[j]: , str[k]: \n", str[j], str[k]);
+				
+				delay(5);
 			}
 			
 			i++;
@@ -131,6 +132,18 @@ char** tokenize(char* str){
 
 
 void print_all_tokens(char** tokens){
+	
+}
+
+void delay(int number_of_seconds) {
+    // Converting time into milli_seconds
+    int milli_seconds = 1000 * number_of_seconds;
+  
+    // Storing start time
+    clock_t start_time = clock();
+  
+    // looping till required time is not achieved
+    while (clock() < start_time + milli_seconds);
 	
 }
 

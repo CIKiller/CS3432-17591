@@ -127,7 +127,7 @@ char** tokenize(char* str){
 	}
 	
 	for (int t = 0; t < tok; t++) {
-		printf("sent[%d]: %s \n", t, sent[t]);
+		printf("sent[%d]: %s \n", t, *sent[t]);
 	}
 	
 	char** tokenized = &sent;

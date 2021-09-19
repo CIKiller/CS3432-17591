@@ -112,11 +112,10 @@ char** tokenize(char* str){
 			
 			while ((str[k] != ' ') || (str[k] != '\0')) { 
 				k++; 
-				printf("j: %d, k: %d \n", j, k);
 				
-				printf("str[j]: %c, str[k]: %c \n", str[j], str[k]);
-				
-				delay(5000);
+				if (str[k] == ' ') {
+					printf("The World is Wrong!");
+				}
 			}
 			
 			i++;

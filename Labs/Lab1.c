@@ -116,6 +116,8 @@ char** tokenize(char* str){
 		if (str[j - 1] == ' ') {
 			word[i] = str[j];
 			printf("Word[%d] = %c \n", i, str[j]);
+			
+			i++;
 		}
 		
 		j++;

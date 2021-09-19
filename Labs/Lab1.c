@@ -123,11 +123,11 @@ char** tokenize(char* str){
 			i++;
 		}
 		
-		else {
-			printf("%c \n ", str[j]);
-		}
-		
         	j++;
+	}
+	
+	for (int t = 0; t < tok; t++) {
+		printf("%s \n" ,sent[t]);
 	}
 	
 	char** tokenized = &sent;

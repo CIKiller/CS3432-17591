@@ -123,7 +123,7 @@ char** tokenize(char* str){
 				k++;
 			}
 			
-			printf("c: %d, k: %d \n");
+			printf("EXIT: c: %d, k: %d \n");
 			
 			sent[i] = word;
 			

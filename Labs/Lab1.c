@@ -124,7 +124,7 @@ char** tokenize(char* str){
 				word[c] = str[k];
 			}
 			
-			sent[i] = word;
+			sent[i] = &word;
 			
 			i++;
 		}

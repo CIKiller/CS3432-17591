@@ -113,6 +113,8 @@ char** tokenize(char* str){
 			word[j] = &l;
 			
 			l++;
+			
+			j++;
   		}
 		
 		printf("\n");

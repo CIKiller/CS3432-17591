@@ -103,8 +103,12 @@ char** tokenize(char* str){
 	for (int i = 0; i < tok; i++) {
 		tokens[i] = (char*) malloc(20 * sizeof(char));
 		
-		char* l = *str;
+		char* l = str;
 		
+		for(int f = 0; *l != (' '|| '\0'); f++) {
+			tokens[i][f] = *l;
+			l++;
+  		}
 		
 	}
 	
@@ -114,6 +118,9 @@ char** tokenize(char* str){
 
 void print_all_tokens(char** tokens){
 	
+	for (int i = 0; tokens[i] != NULL; i++) {
+		printf("Token[%d]: %s \n", i, tokens[i]);
+	}
 }
 
 main() {
@@ -140,15 +147,8 @@ main() {
 	
   printf("Copy of String: %s \n", copy);
 	
-  char *l = str;
+ /char** tokenized = tokenize(str);
 	
-  for(int i = 0; i < strlen(str); i++) {
-	printf("%c",*l);
-	l++;
-  }
-	
- /* char** tokenized = tokenize(str);
-	
-  print_all_tokens(tokenized);*/
+  print_all_tokens(tokenized);
 	
 }

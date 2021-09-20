@@ -128,7 +128,7 @@ main() {
 	
   printf("Enter a string: \n");
 	
-  scanf("%[^\n]%*c", input);
+  //scanf("%[^\n]%*c", input);
 	
   printf("Your input: %s. \n", input);
 	

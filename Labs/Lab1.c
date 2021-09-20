@@ -140,10 +140,10 @@ main() {
 	
   printf("Copy of String: %s \n", copy);
 	
-  char *l = input;
+  char *l = &str;
 	
-  for(int i = 0; i < strlen(input); i++) {
-	printf("%c\n",*l);
+  for(int i = 0; i < strlen(*str); i++) {
+	printf("%c",*l);
 	l++;
   }
 	

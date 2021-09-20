@@ -110,7 +110,7 @@ char** tokenize(char* str){
 		int j = 0;
 		
 		while (*l != ' ' || *l != '\0') {
-			word[j] = &l;
+			word[j] = *l;
 			
 			l++;
 			

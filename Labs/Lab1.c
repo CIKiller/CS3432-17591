@@ -109,6 +109,8 @@ char** tokenize(char* str){
 		
 		for(int f = 0; *l != (' '|| '\0'); f++) {
 			word[f] = *l;
+			
+			l++;
   		}
 		
 		tokens[i] = word;

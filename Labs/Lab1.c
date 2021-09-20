@@ -147,7 +147,7 @@ main() {
 	
   printf("Copy of String: %s \n", copy);
 	
- /char** tokenized = tokenize(str);
+  char** tokenized = tokenize(str);
 	
   print_all_tokens(tokenized);
 	

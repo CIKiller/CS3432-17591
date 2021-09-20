@@ -80,7 +80,7 @@ int count_tokens(char* str){
 */
 char *copy_str(char *inStr, short len){
 	
-	char cop[len];
+	char cop[sizeof(*inStr)];
 	
 	int i = 0;
 	
@@ -98,44 +98,23 @@ char** tokenize(char* str){
 	
 	int tok = count_tokens(str);
 	
-	char* sent = (char*) malloc(tok * sizeof(char));
+	char** tokens = (char**) malloc(tok * sizeof(char*));
 	
-	int i = 0;
-	
-	int j = 0;
-	
-	int k = 0;
-	
-	while (str[j] != '\0') {
-		if (str[j] == ' ' || str[j] == '\t') {
-			printf("%d \n", j);
-			int c = 0;
-			
-			char* word[(j - k)];
-			
-			for (int c = 0; c < (j - (k + 1)); c++) {
-				printf("c: %d, k: %d \n");
-				
-				word[c] = str[k];
-				
-				printf("word[%d]: %c, str[%d]: %c\n", c, word[c], k, str[k]);
-				
-				k++;
-			}
-			
-			printf("EXIT: c: %d, k: %d \n");
-			
-			sent[i] = word;
-			
-			i++;
-		}
+	for (int i = 0; i < tok; i++) {
+		tokens[i] = (char*) malloc(20 * sizeof(char));
 		
-        	j++;
+		
+		if (i == (tok - 1)) {
+			char* e = end_word(str);
+			
+			for (int f = 0; e == '\0';f++) {
+				tokens[i][f] = e;
+				e++;
+			}
+		}
 	}
 	
-	char** tokenized = &sent;
-	
-	return tokenized;
+	return tokens;
 }
 
 
@@ -145,7 +124,7 @@ void print_all_tokens(char** tokens){
 
 main() {
 	
-  char input[100];
+  char input[] = {"Hello Beautiful Owl"};
 	
   printf("Enter a string: \n");
 	
@@ -161,14 +140,16 @@ main() {
 	
   char* end = end_word(str);
 	
+  *end--;
+	
   printf("First letter of the final word: %c \n", *end);
 	
   char* copy = copy_str(str, ' ');
 	
   printf("Copy of String: %s \n", copy);
 	
-  char** tokenized = tokenize(str);
+ /* char** tokenized = tokenize(str);
 	
-  print_all_tokens(tokenized);
+  print_all_tokens(tokenized);*/
 	
 }

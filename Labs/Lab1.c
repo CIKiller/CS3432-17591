@@ -103,15 +103,9 @@ char** tokenize(char* str){
 	for (int i = 0; i < tok; i++) {
 		tokens[i] = (char*) malloc(20 * sizeof(char));
 		
+		char* l = *str;
 		
-		if (i == (tok - 1)) {
-			char* e = end_word(str);
-			
-			for (int f = 0; e == '\0';f++) {
-				tokens[i][f] = e;
-				e++;
-			}
-		}
+		
 	}
 	
 	return tokens;
@@ -145,6 +139,13 @@ main() {
   char* copy = copy_str(str, ' ');
 	
   printf("Copy of String: %s \n", copy);
+	
+  char *l = &str;
+	
+  for(int i = 0; i < strlen(str); i++) {
+	printf("%c\n",*l);
+	l++;
+  }
 	
  /* char** tokenized = tokenize(str);
 	

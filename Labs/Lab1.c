@@ -105,13 +105,13 @@ char** tokenize(char* str){
 		
 		char* l = str;
 		
-		printf("l is %c \n", *l);
+		char* word[20];
 		
 		for(int f = 0; *l != (' '|| '\0'); f++) {
-			tokens[i] = &l;
-			l++;
+			word[f] = *l;
   		}
 		
+		tokens[i] = word;
 	}
 	
 	return tokens;

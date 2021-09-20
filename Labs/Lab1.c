@@ -140,8 +140,6 @@ main() {
 	
   char* end = end_word(str);
 	
-  end--;
-	
   printf("First letter of the final word: %c \n", *end);
 	
   char* copy = copy_str(str, ' ');

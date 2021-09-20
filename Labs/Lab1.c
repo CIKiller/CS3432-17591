@@ -80,7 +80,7 @@ int count_tokens(char* str){
 */
 char *copy_str(char *inStr, short len){
 	
-	char cop[sizeof(*inStr)];
+	char cop[100];
 	
 	int i = 0;
 	

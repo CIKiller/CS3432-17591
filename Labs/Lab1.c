@@ -106,7 +106,7 @@ char** tokenize(char* str){
 		char* l = str;
 		
 		for(int f = 0; *l != (' '|| '\0'); f++) {
-			tokens[i] = l;
+			tokens[i] = *l;
 			l++;
   		}
 		

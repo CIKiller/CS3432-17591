@@ -110,7 +110,6 @@ char** tokenize(char* str){
 		for(int f = 0; *l != (' '|| '\0'); f++) {
 			tokens[i] = &l;
 			l++;
-			printf("l is %c \n", *l);
   		}
 		
 	}

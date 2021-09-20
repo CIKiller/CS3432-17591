@@ -99,19 +99,19 @@ char** tokenize(char* str){
 	int tok = count_tokens(str);
 	
 	char** tokens = (char**) malloc(tok * sizeof(char*));
-	/*
+	
 	for (int i = 0; i < tok; i++) {
-		tokens[i] = (char*) malloc(20 * sizeof(char));
+		//tokens[i] = (char*) malloc(20 * sizeof(char));
 		
 		char* l = str;
 		
 		for(int f = 0; *l != (' '|| '\0'); f++) {
-			tokens[i][f] = *l;
+			//tokens[i][f] = *l;
 			l++;
   		}
 		
 	}
-	*/
+	
 	return tokens;
 }
 

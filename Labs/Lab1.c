@@ -117,7 +117,7 @@ char** tokenize(char* str){
 		
 		printf("\n");
 		
-		tokens[i] = word;
+		tokens[i] = *word;
 	}
 	
 	return tokens;

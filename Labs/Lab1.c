@@ -99,7 +99,7 @@ char** tokenize(char* str){
 	int tok = count_tokens(str);
 	
 	char** tokens = (char**) malloc(tok * sizeof(char*));
-	
+	/*
 	for (int i = 0; i < tok; i++) {
 		tokens[i] = (char*) malloc(20 * sizeof(char));
 		
@@ -111,7 +111,7 @@ char** tokenize(char* str){
   		}
 		
 	}
-	
+	*/
 	return tokens;
 }
 

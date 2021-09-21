@@ -112,7 +112,7 @@ char** tokenize(char* str){
 		while (*l != ' ') {
 			word[j] = *l;
 			
-			printf("%c added at index %d \n", *l,j);
+			printf("%c added at index %d, word[%d] = %c \n", *l, j, j, word[j]);
 			
 			j++;
 			l++;
@@ -120,13 +120,7 @@ char** tokenize(char* str){
 		
 		tokens[i] = word;
 	}
-	
-	for(int k = 0; k < 3; k++) {
-		char* c = tokens[k];
 		
-		printf("%c", c);
-	}
-	
 	return tokens;
 }
 

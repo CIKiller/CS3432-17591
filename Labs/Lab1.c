@@ -128,7 +128,7 @@ void print_all_tokens(char** tokens){
 		
 	char* j = tokens[0];
 		
-	printf("%c \n", j);
+	printf("%c \n", *j);
 }
 
 main() {

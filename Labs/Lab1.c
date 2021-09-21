@@ -148,7 +148,7 @@ void print_all_tokens(char** tokens){
 
 main() {
 	
-  char input[20];
+  char input[100];
 	
   printf("Enter a string: \n");
 	
@@ -157,18 +157,6 @@ main() {
   printf("Your input: %s. \n", input);
 	
   char* str = input;
-	
-  int tokens = count_tokens(str);
-	
-  printf("Tokens: %d \n",tokens);
-	
-  char* end = end_word(str);
-	
-  printf("First letter of the final word: %c \n", *end);
-	
-  char* copy = copy_str(str, ' ');
-	
-  printf("Copy of String: %s \n", copy);
 	
   char** tokenized = tokenize(str);
 	

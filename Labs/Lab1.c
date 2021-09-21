@@ -100,11 +100,13 @@ char** tokenize(char* str){
 	
 	char** tokens = (char**) malloc(tok * sizeof(char*));
 	
-	int i = 0;
+	int i = 1;
 	
 	char* k = str;
 	
-	printf("%c \n", *k);
+	tokens[0] = (char*) malloc(20 * sizeof(char));
+	
+	tokens[0] = k;
 	
 	while (i < tok - 1) {
 		tokens[i] = (char*) malloc(20 * sizeof(char));	
@@ -129,9 +131,11 @@ void print_all_tokens(char** tokens){
 	char* j = tokens[0];
 	
 	while (*j != ' ') {
-		printf("%c \n", *j);
+		printf("%c", *j);
 		j++;
 	}
+	
+	
 }
 
 main() {

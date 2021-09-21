@@ -105,7 +105,11 @@ char** tokenize(char* str){
 		
 		char* l = str;
 		
-		printf("%c", *l);
+		while (*l != ' ') {		
+			printf("%c", *l);
+			
+			l++;
+		}
 		
 		printf("\n");
 	}

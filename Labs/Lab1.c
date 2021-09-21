@@ -104,6 +104,8 @@ char** tokenize(char* str){
 	
 	char* k = str;
 	
+	printf("%c \n", *k);
+	
 	while (i < tok) {
 		tokens[i] = (char*) malloc(20 * sizeof(char));
 		

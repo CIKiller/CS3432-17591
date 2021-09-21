@@ -123,6 +123,10 @@ char** tokenize(char* str){
 		char* w = tokens[0];
 		
 		printf("%c \n", *w);
+		
+		w++;
+		
+		printf("%c \n", *w);
 	}
 		
 	return tokens;

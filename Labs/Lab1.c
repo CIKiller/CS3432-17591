@@ -104,8 +104,6 @@ char** tokenize(char* str){
 	
 	char* k = str;
 	
-	k = word_start(k);
-	
 	printf("%c \n", *k);
 	
 	while (i < tok) {
@@ -118,6 +116,8 @@ char** tokenize(char* str){
 		printf("%c \n", *k);
 		
 		i++;
+		
+		printf("i: %d \n", i);
 	}
 		
 	return tokens;

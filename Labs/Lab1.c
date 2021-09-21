@@ -108,7 +108,7 @@ char** tokenize(char* str){
 	
 	tokens[0] = k;
 	
-	while (i < tok - 1) {
+	while (i < tok) {
 		tokens[i] = (char*) malloc(20 * sizeof(char));	
 		
 		k = word_start(k);

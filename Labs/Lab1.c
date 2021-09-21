@@ -120,9 +120,9 @@ char** tokenize(char* str){
 		tokens[i] = &word;
 	}
 	
-	char** t = tokens
+	char** t = tokens;
 	
-	for (int u = 0; u < 20; i++) {
+	for (int u = 0; u < 20; u++) {
 		printf("%c \n", **t);
 	}
 		

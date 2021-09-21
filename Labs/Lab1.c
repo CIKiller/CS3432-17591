@@ -21,7 +21,7 @@ bool non_delim_character(char c){
    space-separated word*/
 char *word_start(char* str){
 	
-	for (int i = 1; i < sizeof(str); i++) {
+	for (int i = 0; i < strlen(str); i++) {
 		if (delim_character(str[i - 1])) {
 			char* first = &str[i];
 			
@@ -103,10 +103,6 @@ char** tokenize(char* str){
 	int i = 0;
 	
 	char* k = str;
-	
-	printf("%c \n", *k);
-	
-	k = word_start(k);
 	
 	printf("%c \n", *k);
 	

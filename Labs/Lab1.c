@@ -130,7 +130,7 @@ void print_all_tokens(char** tokens){
 		char* j = tokens[i];
 		
 		while (!(delim_character(j))) {
-			print("%c", *j);
+			printf("%c", *j);
 		}
 		
 		printf("\n");

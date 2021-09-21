@@ -110,9 +110,9 @@ char** tokenize(char* str){
 		char* word[20];
 		
 		while (*l != ' ') {		
-			printf("%c \n", *l);
+			printf("Letter %d: %c \n", j, *l);
 			word[j] = *l;
-			printf("%s", &word);
+			printf("Word %d: %s", j, &word);
 			
 			j++;
 			l++;

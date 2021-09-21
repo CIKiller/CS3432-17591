@@ -129,12 +129,18 @@ char** tokenize(char* str){
 void print_all_tokens(char** tokens){
 	
 	printf("Token[0]: %s \n", tokens[0]);
-		
-	char* j = tokens[0];
 	
-	while (*j != ' ') {
-		printf("%c", *j);
-		j++;
+	for (int i = 0; i < 4 /*count_tokens(tokens[0])*/; i++) {
+		
+		printf("Token[%d]: ", i);
+		
+		char* j = tokens[i];
+
+		while (*j != ' ') {
+			printf("%c", *j);
+			j++;
+		}
+		printf("\n");
 	}
 	
 	

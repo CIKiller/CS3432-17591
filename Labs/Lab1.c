@@ -111,11 +111,17 @@ char** tokenize(char* str){
 		
 		k = word_start(k);
 		
-		tokens[i] = k;
-		
-		printf("%c \n", *k);
-		
-		i++;
+		if (k != NULL) {
+			tokens[i] = k;
+
+			printf("%c \n", *k);
+
+			i++;
+		}
+	}
+	
+	for(int y = 0; y < tok; y++) {
+		printf("%s \n", tokens[y]);
 	}
 		
 	return tokens;

@@ -107,7 +107,9 @@ char** tokenize(char* str){
 	printf("%c \n", *k);
 	
 	while (i < tok) {
-		tokens[i] = (char*) malloc(20 * sizeof(char));		
+		tokens[i] = (char*) malloc(20 * sizeof(char));	
+		
+		printf("Check");
 		
 		k = word_start(k);
 		

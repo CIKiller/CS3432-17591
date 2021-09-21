@@ -121,7 +121,11 @@ char** tokenize(char* str){
 		tokens[i] = &word;
 	}
 	
-	printf("%c \n", **tokens);
+	char** t = tokens
+	
+	for (int u = 0; i < 20; i++) {
+		printf("%c \n", **t);
+	}
 		
 	return tokens;
 }

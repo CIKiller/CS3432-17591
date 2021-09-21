@@ -131,8 +131,12 @@ void print_all_tokens(char** tokens){
 	for (int i = 0; tokens[i] != NULL; i++) {
 		printf("Token[%d]: ", i);
 		
-		for (char* j = tokens[i]; (*j == ' ' || *j == '\0'); j++) {
+		char* j = tokens[i];
+		
+		while (*j != ' ') {
 			printf("%c", *j);
+			
+			j++;
 		}
 		
 		printf("\n");

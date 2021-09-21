@@ -131,7 +131,7 @@ void print_all_tokens(char** tokens){
 	for (int i = 0; tokens[i] != NULL; i++) {
 		printf("Token[%d]: ", i);
 		
-		for (int j = tokens[i]; (*j == ' ' || *j == '\0'; j++) {
+		for (int j = tokens[i]; (*j == ' ' || *j == '\0'); j++) {
 			printf("%c", *j);
 		}
 		

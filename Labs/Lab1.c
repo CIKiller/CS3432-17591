@@ -128,7 +128,7 @@ void print_all_tokens(char** tokens){
 		
 		if (i == (count_tokens(tokens[0]) - 1)) {
 
-			printf("Token[%d]: %s", i, tokens[i]);
+			printf("Token[%d]: %s \n", i, tokens[i]);
         }
 		
 		else {
@@ -148,11 +148,11 @@ void print_all_tokens(char** tokens){
 
 main() {
 	
-  char input[] = {"Hello Beautiful Wonderful Owl"};
+  char input[20];
 	
   printf("Enter a string: \n");
 	
-  //scanf("%[^\n]%*c", input);
+  scanf("%[^\n]%*c", input);
 	
   printf("Your input: %s. \n", input);
 	

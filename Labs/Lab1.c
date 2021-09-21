@@ -120,6 +120,8 @@ char** tokenize(char* str){
 		
 		tokens[i] = &word;
 	}
+	
+	printf("%c \n", **tokens);
 		
 	return tokens;
 }
@@ -148,7 +150,7 @@ void print_all_tokens(char** tokens){
 
 main() {
 	
-  char input[] = {"Beautiful Owl"};
+  char input[] = {"Hello Beautiful Owl"};
 	
   printf("Enter a string: \n");
 	

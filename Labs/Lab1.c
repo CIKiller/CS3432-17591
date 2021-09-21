@@ -121,7 +121,7 @@ char** tokenize(char* str){
 				k++;
 			}
 			
-			printf("\n")
+			printf("\n");
 			
 			j++;
 			l++;

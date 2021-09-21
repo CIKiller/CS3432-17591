@@ -118,7 +118,7 @@ char** tokenize(char* str){
 			l++;
 		}
 		
-		tokens[i] = word;
+		tokens[i] = &word;
 		
 		char* w = tokens[0];
 		

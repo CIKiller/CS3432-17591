@@ -112,6 +112,8 @@ char** tokenize(char* str){
 		while (*l != ' ') {
 			word[j] = *l;
 			
+			printf("%c added at index %d \n", *l,j)
+			
 			j++;
 			l++;
 		}

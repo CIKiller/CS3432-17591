@@ -113,7 +113,7 @@ char** tokenize(char* str){
 		
 		k = word_start(l);
 		
-		l = k;
+		tokens[i] = k;
 		
 		printf("%c \n", *k);
 		
@@ -136,7 +136,6 @@ void print_all_tokens(char** tokens){
 		printf("%c", *j);
 		
 		while (*j != ' ') {
-			
 			
 			j++;
 		}

@@ -117,8 +117,6 @@ char** tokenize(char* str){
 		}
 		
 		tokens[i] = &word;
-		
-		printf("%c", *tokens[i]);
 	}
 	
 	return tokens;
@@ -130,7 +128,7 @@ void print_all_tokens(char** tokens){
 	for (int i = 0; tokens[i] != NULL; i++) {
 		printf("Token[%d]: ", i);
 		
-		char* j = tokens[i];
+		char* j = &tokens[i];
 		
 		printf("%c", *j);
 		

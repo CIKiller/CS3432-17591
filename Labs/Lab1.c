@@ -134,7 +134,7 @@ void print_all_tokens(char** tokens){
 		
 		char* j = tokens[i];
 
-		while (*j != ' ' || *j != '\0') {
+		while (*j != ' ') {
 			printf("%c", *j);
 			j++;
 		}

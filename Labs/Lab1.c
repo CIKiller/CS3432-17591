@@ -100,27 +100,16 @@ char** tokenize(char* str){
 	
 	char** tokens = (char**) malloc(tok * sizeof(char*));
 	
-	for (int i = 0; i < tok; i++) {
+	char* l = str;
+		
+	printf("%c \n", *l);
+	
+	for (int i = 1; i < tok; i++) {
 		tokens[i] = (char*) malloc(20 * sizeof(char));
 		
-		char* l = str;
+		char* k = word_start(l);
 		
-		int j = 0;
-		
-		char* word[20];
-		
-   		char* token = strtok(*str, ' ');
-		
-		int c = 0;
-   
-  		while( token != NULL ) {
-			
-      			printf( "Token[%d]: %s\n", c, token );
-			
-			j++;
-    
-      			token = strtok(NULL, ' ');
-   		}
+		printf("% \n", *k);
 	}
 		
 	return tokens;

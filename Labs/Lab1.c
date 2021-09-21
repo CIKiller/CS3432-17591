@@ -109,21 +109,18 @@ char** tokenize(char* str){
 		
 		char* word[20];
 		
-		while (*l != ' ') {
+   		char* token = strtok(*str, ' ');
+		
+		int c = 0;
+   
+  		while( token != NULL ) {
 			
-			word[j] = *l;
+      			printf( "Token[%d]: %s\n", c, token );
 			
 			j++;
-			l++;
-		}
-		
-		tokens[i] = &word;
-	}
-	
-	char* t = tokens[0];
-	
-	for (int u = 0; u < 20; u++) {
-		printf("%c \n", *t);
+    
+      			token = strtok(NULL, ' ');
+   		}
 	}
 		
 	return tokens;

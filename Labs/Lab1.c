@@ -148,7 +148,7 @@ void print_all_tokens(char** tokens){
 
 main() {
 	
-  char input[] = {"Hello Beautiful Owl"};
+  char input[] = {"Beautiful Owl"};
 	
   printf("Enter a string: \n");
 	

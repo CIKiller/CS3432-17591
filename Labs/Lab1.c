@@ -119,6 +119,10 @@ char** tokenize(char* str){
 		tokens[i] = &word;
 	}
 	
+	for(int k = 0; k < 3; k++) {
+		printf("%s \n", tokens[k]);
+	}
+	
 	return tokens;
 }
 

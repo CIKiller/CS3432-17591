@@ -124,11 +124,7 @@ char** tokenize(char* str){
 	for(int k = 0; k < 3; k++) {
 		char* c = tokens[k];
 		
-		while (c != ' ') {
-			printf("%c", c);
-			
-			c++;
-		}
+		printf("%c", c);
 	}
 	
 	return tokens;

@@ -64,9 +64,6 @@ int main(){
 	init_regs(); // DO NOT REMOVE THIS LINE
 
 	// Below is a sample program to a write-read. Overwrite this with your own code.
-	write_read_demo();
 
 	printf("Hello World");
-
-	return 0;
 }

@@ -66,5 +66,7 @@ int main(){
 	// Below is a sample program to a write-read. Overwrite this with your own code.
 	write_read_demo();
 
+	printf("Hello World");
+
 	return 0;
 }

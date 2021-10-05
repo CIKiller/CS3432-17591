@@ -23,7 +23,23 @@ void init_regs(){
 		reg[i] = i;
 }
 
+void print_regs(){
 
+  int col_size = 10;
+
+  for(int i = 0; i < 8; i++){
+
+    printf("X%02i:%.*lld", i, col_size, (long long int) reg[i]);
+
+    printf(" X%02i:%.*lld", i+8, col_size, (long long int) reg[i+8]);
+
+    printf(" X%02i:%.*lld", i+16, col_size, (long long int) reg[i+16]);
+
+    printf(" X%02i:%.*lld\n", i+24, col_size, (long long int) reg[i+24]);
+
+  }
+
+}
 
 /**
  * Fill out this function and use it to read interpret user input to execute RV64 instructions.

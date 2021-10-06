@@ -1,3 +1,4 @@
+#include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h> // malloc & free
@@ -23,6 +24,42 @@ void init_regs(){
 		reg[i] = i;
 }
 
+void add(char* input) {
+  char* str = strtok(input, " "); 
+}
+
+void addi(char* input) {
+
+}
+
+void load(char* input) {
+
+}
+
+void store(char* input) {
+
+}
+
+bool compare(char* a, char* b) {
+
+  while (*a != '\0' || *b != '\0') {
+    if (*a == *b) {
+      a++;
+      b++;
+    }
+
+    else if ((*a == '\0' && *b != '\0') ||
+	     (*a != '\0' && *b == '\0') ||
+	     (*a != *b)) {
+
+      return false;
+
+    }
+  }
+  
+  return true;
+}
+
 void print_regs(){
 
   int col_size = 10;
@@ -46,8 +83,35 @@ void print_regs(){
  * You may expect that a single, properly formatted RISC-V instruction string will be passed
  * as a parameter to this function.
  */
+
 bool interpret(char* instr){
-	return true;
+
+      char* str = strtok(instr, " ");
+
+      printf("String: %s\n", str);
+  
+      if (compare(str, "ADD")) {
+	printf("Adding\n");
+      }
+
+      else if (compare(str, "ADDI")) {
+	printf("Adding Immediately\n");
+      }
+
+      else if (compare(str, "LW")) {
+	printf("Loading Word\n");
+      }
+
+      else if (compare(str, "SW")) {
+	printf("Storing Word\n");
+      }
+
+      else {
+	printf("Invalid Input\n");
+	return false;
+      }
+      
+      return true;
 }
 
 
@@ -58,29 +122,71 @@ bool interpret(char* instr){
  * Use 0x before an int in C to hardcode it as text, but you may enter base 10 as you see fit.
  */
 
-void write_read_demo(){
+/*void write_read_demo(){
 	int32_t data_to_write = 0xFFF; // equal to 4095
 	int32_t address = 0x98; // equal to 152
 	char* mem_file = "mem.txt";
 
 	// Write 4095 (or "0000000 00000FFF") in the 20th address (address 152 == 0x98)
 	int32_t write = write_address(data_to_write, address, mem_file);
-	if(write == (int32_t) NULL)
-		printf("ERROR: Unsucessful write to address %0X\n", 0x40);
+        if(write == (int32_t) NULL)
+	  printf("ERROR: Unsucessful write to address %0X\n", 0x40);
 	int32_t read = read_address(address, mem_file);
 
 	printf("Read address %lu (0x%lX): %lu (0x%lX)\n", address, address, read, read); // %lu -> format as an long-unsigned
-}
+}*/
 
 /**
  * Your code goes in the main
  *
  */
+
 int main(){
-	// Do not write any code between init_regs
-	init_regs(); // DO NOT REMOVE THIS LINE
 
-	// Below is a sample program to a write-read. Overwrite this with your own code.
+  // Do not write any code between init_regs
 
-	write_read_demo();
+  init_regs(); // DO NOT REMOVE THIS LINE
+
+  print_regs();
+
+  // Below is a sample program to a write-read. Overwrite this with your own code.
+
+  //write_read_demo();
+
+  printf(" RV32 Interpreter.\nType RV32 instructions. Use upper-case letters and space as a delimiter.\nEnter 'EOF' character to end program\n");
+
+  char* instruction = malloc(1000 * sizeof(char));
+
+  bool is_null = false;
+
+  // fgets() returns null if EOF is reached.
+
+  scanf("%[^\n]%*c", instruction);
+
+  if (compare(instruction, "NULL") || compare(instruction, "EOF")) {
+    is_null = true;
+  }
+
+  while (!is_null) {
+
+    char* str = instruction;
+
+    interpret(str);
+
+    printf("\n");
+
+    print_regs();
+
+    printf("\n");
+
+    scanf("%[^\n]%*c", instruction);
+
+    if (compare(instruction, "Null") || compare(instruction, "EOF")) {
+      is_null = true;
+    }
+
+  }
+
+  printf("Good bye!\n");
+
 }

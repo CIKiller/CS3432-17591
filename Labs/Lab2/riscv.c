@@ -1,22 +1,12 @@
 #include <string.h>
-
 #include <stdio.h>
-
 #include <stdbool.h>
-
 #include <stdlib.h> // malloc & free
-
 #include <stdint.h> // use guaranteed 64-bit integers
-
 #include "tokenizer.h" // Create header file and reference that
-
 #include "memory.h" // built-in functions to read and write to a specific file
 
-
-
 int32_t* reg; // Array of 32 32-bit registers
-
-
 
 void init_regs();
 
@@ -46,7 +36,7 @@ void init_regs(){
 
 }
 
-void add(char* input) {
+void add(char* dest, char* first, char* sec) {
   
 }
 
@@ -131,25 +121,37 @@ void print_regs(){
 
 
 bool interpret(char* instr){
-
-  printf("%s\n", instr);
-
-  char* str1 = (char*) malloc(20);
-
-  str1 = instr;
   
   char* str = strtok(instr, " ");
 
   printf("%s\n", str);
-
-  printf("%s\n", str1);
-  
   
   if (compare(str, "ADD")) {
 
     printf("Adding\n");
+
+    char* a;
+    char* b;
+    char* c;
+
+    for (int i = 0; i < 3; i++) {
+
+      str = strtok(NULL, " ");
+
+      if (i == 0) {
+	a = str;
+      }
+
+      if (i == 1) {
+	b = str;
+      }
+
+      if (i == 2) {
+	c = str;
+      }
+    }
     
-    add(str);
+    add(a, b, c);
 
   }
 

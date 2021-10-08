@@ -37,29 +37,22 @@ void init_regs(){
 }
 
 void add(char* dest, char* first, char* sec) {
+
+  reg[atoi(&dest[1])] = reg[atoi(&first[1])] + reg[atoi(&sec[1])];
   
 }
 
+void addi(char* dest, char* first, int sec) {
 
-void addi(char* input) {
-
-
-
-}
-
-
-
-void load(char* input) {
-
-
+  reg[atoi(&dest[1])] = reg[atoi(&first[1])]+ sec;
 
 }
 
+void load(char* dest, char* first, char* sec) {
 
+}
 
-void store(char* input) {
-
-
+void store(char* dest, char* first, char* sec) {
 
 }
 
@@ -123,16 +116,13 @@ void print_regs(){
 bool interpret(char* instr){
   
   char* str = strtok(instr, " ");
-
-  printf("%s\n", str);
+  char* a;
+  char* b;
+  char* c;
   
   if (compare(str, "ADD")) {
 
     printf("Adding\n");
-
-    char* a;
-    char* b;
-    char* c;
 
     for (int i = 0; i < 3; i++) {
 
@@ -158,7 +148,33 @@ bool interpret(char* instr){
 
   else if (compare(str, "ADDI")) {
 
-    printf("Adding Immediately\n");
+    int k;
+    
+    for (int i = 0; i < 3; i++) {
+
+      str = strtok(NULL, " ");
+
+      if (i == 0) {
+
+	a = str;
+
+      }
+
+      if (i == 1) {
+
+	b = str;
+
+      }
+
+      if (i == 2) {
+
+	k = atoi(str);
+
+      }
+
+    }
+
+    addi(a, b, k);
 
   }
 
@@ -167,6 +183,32 @@ bool interpret(char* instr){
 
     printf("Loading Word\n");
 
+    for (int i = 0; i < 3; i++) {
+
+      str = strtok(NULL, " ");
+
+      if (i == 0) {
+
+	a = str;
+
+      }
+
+      if (i == 1) {
+
+	b = str;
+
+      }
+
+      if (i == 2) {
+
+	c = str;
+
+      }
+
+    }
+
+    load(a, b, c);
+
   }
 
 
@@ -174,9 +216,33 @@ bool interpret(char* instr){
 
     printf("Storing Word\n");
 
+    for (int i = 0; i < 3; i++) {
+
+      str = strtok(NULL, " ");
+
+      if (i == 0) {
+
+	a = str;
+
+      }
+
+      if (i == 1) {
+
+	b = str;
+
+      }
+
+      if (i == 2) {
+
+	c = str;
+
+      }
+
+    }
+
+    store(a, b, c);
+
   }
-
-
 
   else {
 
@@ -186,10 +252,7 @@ bool interpret(char* instr){
 
   }
 
-
-
   return true;
-
 }
 
 /**
@@ -240,47 +303,35 @@ bool interpret(char* instr){
 
 int main(){
 
-
-
   // Do not write any code between init_regs
-
-
 
   init_regs(); // DO NOT REMOVE THIS LINE
 
-
-
   print_regs();
 
-
-
   // Below is a sample program to a write-read. Overwrite this with your own code.
-
-
-
+  
   //write_read_demo();
-
-
 
   printf(" RV32 Interpreter.\nType RV32 instructions. Use upper-case letters and space as a delimiter.\nEnter 'EOF' character to end program\n");
 
-
-
   char* instruction = malloc(1000 * sizeof(char));
-
-
 
   bool is_null = false;
 
-
-
   // fgets() returns null if EOF is reached.
-
-
 
   scanf("%[^\n]%*c", instruction);
 
+  int ab = 2008345;
 
+  printf("int: %d, hex: %X\n", ab, ab);
+
+  char e[32];
+
+  sprintf(e, "%X", ab);
+  
+  printf("Hex of 2008345: %s\n", e);
 
   if (compare(instruction, "NULL") || compare(instruction, "EOF")) {
 
@@ -288,50 +339,26 @@ int main(){
 
   }
 
-
-
   while (!is_null) {
-
-
 
     char* str = instruction;
 
-
-
     interpret(str);
 
-
-
     printf("\n");
-
-
 
     print_regs();
-
-
-
+    
     printf("\n");
 
-
-
     scanf("%[^\n]%*c", instruction);
-
-
 
     if (compare(instruction, "NULL") || compare(instruction, "EOF")) {
 
       is_null = true;
 
     }
-
-
-
   }
 
-
-
   printf("Good bye!\n");
-
-
-
 }

@@ -8,6 +8,7 @@
 
 int32_t* reg; // Array of 32 32-bit registers
 
+
 void init_regs();
 
 bool interpret(char* instr);
@@ -38,14 +39,37 @@ void init_regs(){
 
 void add(char* dest, char* first, char* sec) {
 
-  reg[atoi(&dest[1])] = reg[atoi(&first[1])] + reg[atoi(&sec[1])];
+  reg[atoi(&dest[1])] = reg[atoi(&first[1])] + reg[atoi(&sec[1])]; 
   
 }
 
 void addi(char* dest, char* first, int sec) {
 
-  reg[atoi(&dest[1])] = reg[atoi(&first[1])]+ sec;
+  int32_t c = atoi(&dest[1]);
+  //Save the address as a 32-bit int.
 
+  reg[atoi(&dest[1])] = reg[atoi(&first[1])] + sec;
+  //Perform ADDI function upon first input register.
+  
+  char* mem_file = "mem.txt";
+  //Initialize pointer to mem.txt.
+  
+  int32_t read = read_address(c, mem_file);
+  //Read the file to check before.
+
+  printf("Read address %u (0x%1X): %u (0x%1X)\n", c, c, read, read);
+  //Print the address and its value before change.
+
+  read = read + sec;
+  //Perform the ADDI function.
+
+  int32_t write = write_address(read, c, mem_file);
+  //Write read to the address.
+
+  read = read_address(c, mem_file);
+
+  printf("Read address %u (0x%1X): %u (0x%1X)\n", c, c, read, read);
+  //Print the address and its value after change.
 }
 
 void load(char* dest, char* first, char* sec) {
@@ -322,16 +346,6 @@ int main(){
   // fgets() returns null if EOF is reached.
 
   scanf("%[^\n]%*c", instruction);
-
-  int ab = 2008345;
-
-  printf("int: %d, hex: %X\n", ab, ab);
-
-  char e[32];
-
-  sprintf(e, "%X", ab);
-  
-  printf("Hex of 2008345: %s\n", e);
 
   if (compare(instruction, "NULL") || compare(instruction, "EOF")) {
 

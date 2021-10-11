@@ -231,8 +231,6 @@ bool interpret(char* instr){
 
     str = strtok(NULL, ")");
     c = str;
-
-    printf("%s, %s, %s\n", a, b, c);
     
     load(a, b, c);
   }

@@ -50,36 +50,23 @@ void add(char* dest, char* first, char* sec) {
   
   reg[atoi(&dest[1])] = reg[atoi(&first[1])] + reg[atoi(&sec[1])];
   int32_t write = write_address(result, atoi(&dest[1]), mem_file);
-  //Perform ADD operation on both registers and mem file.  
+  //Perform ADD operation on both registers and memfile.  
 }
 
 void addi(char* dest, char* first, int sec) {
 
-  int32_t c = atoi(&dest[1]);
-  //Save the address as a 32-bit int.
-
-  reg[atoi(&dest[1])] = reg[atoi(&first[1])] + sec;
-  //Perform ADDI function upon first input register.
-  
   char* mem_file = "mem.txt";
-  //Initialize pointer to mem.txt.
   
-  int32_t read = read_address(c, mem_file);
-  //Read the file to check before.
-
-  printf("Read address %u (0x%1X): %u (0x%1X)\n", c, c, read, read);
-  //Print the address and its value before change.
-
+  int32_t a = atoi(&dest[1]);
+  int32_t b = atoi(&first[1]);
+  //Get addresses of input registers.
+  
+  int32_t read = read_address(b, mem_file);
   read = read + sec;
-  //Perform the ADDI function.
 
-  int32_t write = write_address(read, c, mem_file);
-  //Write read to the address.
-
-  read = read_address(c, mem_file);
-
-  printf("Read address %u (0x%1X): %u (0x%1X)\n", c, c, read, read);
-  //Print the address and its value after change.
+  reg[a] = reg[b] + sec;
+  int32_t write = write_address(read, a, mem_file);
+  //Perform ADDI operation upon both registers and memfile.
 }
 
 void load(char* dest, char* first, char* sec) {

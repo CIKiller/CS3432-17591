@@ -15,6 +15,8 @@ bool interpret(char* instr);
 
 void write_read_demo();
 
+int32_t offset[31][7];
+
 /**
 
  * Initialize register array for usage.
@@ -39,8 +41,16 @@ void init_regs(){
 
 void add(char* dest, char* first, char* sec) {
 
-  reg[atoi(&dest[1])] = reg[atoi(&first[1])] + reg[atoi(&sec[1])]; 
+  char* mem_file = "mem.txt";
+
+  int32_t read1 = read_address(atoi(&first[1]), mem_file);
+  int32_t read2 = read_address(atoi(&sec[1]), mem_file);
+  int32_t result = read1 + read2;
+  //Read two numbers being added and add them together.
   
+  reg[atoi(&dest[1])] = reg[atoi(&first[1])] + reg[atoi(&sec[1])];
+  int32_t write = write_address(result, atoi(&dest[1]), mem_file);
+  //Perform ADD operation on both registers and mem file.  
 }
 
 void addi(char* dest, char* first, int sec) {
@@ -166,7 +176,6 @@ bool interpret(char* instr){
     }
     
     add(a, b, c);
-
   }
 
 
@@ -179,27 +188,19 @@ bool interpret(char* instr){
       str = strtok(NULL, " ");
 
       if (i == 0) {
-
 	a = str;
-
       }
 
       if (i == 1) {
-
 	b = str;
-
       }
 
       if (i == 2) {
-
 	k = atoi(str);
-
       }
-
     }
 
     addi(a, b, k);
-
   }
 
   
@@ -207,32 +208,16 @@ bool interpret(char* instr){
 
     printf("Loading Word\n");
 
-    for (int i = 0; i < 3; i++) {
+    str = strtok(NULL, " ");
+    a = str;
 
-      str = strtok(NULL, " ");
+    str = strtok(NULL, " ");
+    b = str;
 
-      if (i == 0) {
-
-	a = str;
-
-      }
-
-      if (i == 1) {
-
-	b = str;
-
-      }
-
-      if (i == 2) {
-
-	c = str;
-
-      }
-
-    }
-
+    str = strtok(NULL, "(");
+    c = str;
+    
     load(a, b, c);
-
   }
 
 
@@ -240,38 +225,21 @@ bool interpret(char* instr){
 
     printf("Storing Word\n");
 
-    for (int i = 0; i < 3; i++) {
+    str = strtok(NULL, " ");
+    a = str;
 
-      str = strtok(NULL, " ");
+    str = strtok(NULL, " ");
+    b = str;
 
-      if (i == 0) {
-
-	a = str;
-
-      }
-
-      if (i == 1) {
-
-	b = str;
-
-      }
-
-      if (i == 2) {
-
-	c = str;
-
-      }
-
-    }
-
-    store(a, b, c);
-
+    str = strtok(NULL, "(");
+    c = str;
+    
+   store(a, b, c);
   }
 
   else {
 
     printf("Invalid Input\n");
-
     return false;
 
   }
@@ -348,9 +316,7 @@ int main(){
   scanf("%[^\n]%*c", instruction);
 
   if (compare(instruction, "NULL") || compare(instruction, "EOF")) {
-
     is_null = true;
-
   }
 
   while (!is_null) {

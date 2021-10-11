@@ -8,6 +8,7 @@
 
 int32_t* reg; // Array of 32 32-bit registers
 
+int32_t* temp;
 
 void init_regs();
 
@@ -39,13 +40,23 @@ void init_regs(){
 
 }
 
+void init_temp() {
+  int temp_amount = 32;
+
+  temp = malloc(temp_amount * sizeof(int32_t));
+
+  for (int i = 0; i < 32; i++) {
+    temp[i] = 0;
+  }
+}
+
 void add(char* dest, char* first, char* sec) {
 
   char* mem_file = "mem.txt";
 
-  int32_t read1 = read_address(atoi(&first[1]), mem_file);
-  int32_t read2 = read_address(atoi(&sec[1]), mem_file);
-  int32_t result = read1 + read2;
+  int32_t read = read_address(atoi(&first[1]), mem_file);
+  int32_t read1 = read_address(atoi(&sec[1]), mem_file);
+  int32_t result = read + read1;
   //Read two numbers being added and add them together.
   
   reg[atoi(&dest[1])] = reg[atoi(&first[1])] + reg[atoi(&sec[1])];
@@ -71,37 +82,54 @@ void addi(char* dest, char* first, int sec) {
 
 void load(char* dest, char* first, char* sec) {
 
+  char* mem_file = "mem.txt";
+
+  int32_t def = (atoi(&dest[1]));
+  int32_t off = (atoi(&first[0])) / 4;
+  int32_t src = (atoi(&sec[1]));
+  //Initialize address' of registers and offset.
+
+  int32_t read = read_address(src, mem_file);
+  //Get value held at src register to be written.
+
+  temp[def] = (src << off);
+  //The value is offset to symbolize that it has been loaded.
+  
+  offset[def][off] = read;
+  //Perform LW operation on registers and memfile.
 }
 
 void store(char* dest, char* first, char* sec) {
 
+  char* mem_file = "mem.txt";
+
+  int32_t src = (atoi(&dest[1]));
+  int32_t off = (atoi(&first[0])) / 4;
+  int32_t def = (atoi(&sec[1]));
+  //Initialize address' of registers and offset.
+
+  reg[def] = temp[src];
+  int32_t write = write_address(offset[src][off], def, mem_file);
+  //Perform SW operation on registers and memfile.
 }
 
 bool compare(char* a, char* b) {
 
   while (*a != '\0' || *b != '\0') {
-
     if (*a == *b) {
-
       a++;
-
       b++;
-
     }
 
     else if ((*a == '\0' && *b != '\0') ||
-
 	     (*a != '\0' && *b == '\0') ||
-
 	     (*a != *b)) {
-
       return false;
-      
+      //Return false if there is a difference in the "string".
     }
-
   }
-
   return true;
+  //Return true by default.
 
 }
 
@@ -198,11 +226,13 @@ bool interpret(char* instr){
     str = strtok(NULL, " ");
     a = str;
 
-    str = strtok(NULL, " ");
+    str = strtok(NULL, "(");
     b = str;
 
-    str = strtok(NULL, "(");
+    str = strtok(NULL, ")");
     c = str;
+
+    printf("%s, %s, %s\n", a, b, c);
     
     load(a, b, c);
   }
@@ -215,10 +245,10 @@ bool interpret(char* instr){
     str = strtok(NULL, " ");
     a = str;
 
-    str = strtok(NULL, " ");
+    str = strtok(NULL, "(");
     b = str;
 
-    str = strtok(NULL, "(");
+    str = strtok(NULL, ")");
     c = str;
     
    store(a, b, c);
@@ -287,6 +317,9 @@ int main(){
   init_regs(); // DO NOT REMOVE THIS LINE
 
   print_regs();
+
+  init_temp();
+  //Temp registers to serve as "memory".
 
   // Below is a sample program to a write-read. Overwrite this with your own code.
   

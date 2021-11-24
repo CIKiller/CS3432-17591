@@ -14,6 +14,15 @@ void map(struct node *head, int (*f)(int))
     map(head->next, f);
 }
 
+void nonRecMap(struct node *head, int (*f)(int)) {
+    
+    while (head) {
+        head->value = f(head->value);
+        head = head->next;
+    }
+    return;
+}
+
 int square(int val)
 {
     return(val*val);

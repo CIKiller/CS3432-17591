@@ -27,9 +27,62 @@ main:
 
 map:
 #### YOUR CODE GOES HERE ####
-
-
-
+    
+    map:    
+        # if (head) GOTO return
+        beq x10, x0, return
+        
+        #allocate stack frame
+        addi sp, sp, -16
+        
+        #allocate stack pointer
+        sw x1 4(sp)
+        
+        #load head->value onto stack pointer
+        lw x10, 0(sp)
+        
+        #call function f
+        jalr x1
+        
+        #store value of function call into x10
+        sw x10, 0(sp)
+        
+        #recursive function call
+        lw x10 4(sp)
+        
+        #pop stack frame
+        addi sp, sp, 16
+    
+    return:
+        #return
+        jal x0, 0(x1) 
+        
+nonRecMap:
+    
+    map:
+        #allocate stack frame
+        addi sp, sp, -8
+        
+        #allocate stack pointer
+        sw x1 4(sp)
+        
+        #load head->value onto stack pointer
+        lw x10, 0(sp)
+        
+        #call function f
+        jalr x1
+        
+        #store value of function call onto x10
+        sw x10 0(sp)
+    
+        #if (head) GOTO map
+        bne x10, x0, map
+        
+        #pop stack pointer
+        addi sp, sp, 8
+        
+        #return
+        jal x0, 0(x1)
 
 square:
     mul x10 ,x10, x10

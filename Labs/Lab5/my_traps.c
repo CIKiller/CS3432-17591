@@ -11,7 +11,7 @@ uintptr_t handle_trap(uintptr_t epc, uintptr_t cause, uintptr_t tval, uintptr_t 
     printf("my traps\n");
     if (code == 11) {
         if (regs[10] == 1) {
-            
+            prinf("%d", regs[11]);
         }
             
         else if (regs[10] == 9) {

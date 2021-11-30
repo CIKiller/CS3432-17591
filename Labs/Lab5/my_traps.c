@@ -10,8 +10,25 @@ uintptr_t handle_trap(uintptr_t epc, uintptr_t cause, uintptr_t tval, uintptr_t 
     code = ((intptr_t)cause < 0) ? -code : code;
     printf("my traps\n");
     if (code == 11) {
-            if (regs[10] == 10)
-                    _exit(0);
+        if (regs[10] == 1) {
+            
+        }
+            
+        else if (regs[10] == 9) {
+            
+        }
+            
+        else if (regs[10] == 10) {
+            _exit(0);
+        }
+        
+        else if (regs[10] == 11) {
+            
+        }
+        
+        else if (regs[10 == 17) {
+            
+        }
     }
     _exit(code);
     __builtin_unreachable();
